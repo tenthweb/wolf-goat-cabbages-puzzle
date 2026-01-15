@@ -147,6 +147,22 @@ function warnPlayer(tile) {
   });
 }
 
+/* handle menu buttons */
+
+document.getElementById("start-game-button")
+  .addEventListener("click", hideStartScreen);
+
+document.getElementById("instructions-button")
+  .addEventListener("click", displayRules);
+
+document.getElementById("play-again-button")
+  .addEventListener("click", resetGame);
+
+document.getElementById("return-main-button")
+  .addEventListener("click", resetApp);
+
+/* Initialise game tiles */
+
 let topBank1 = new Tile("top-bank-1", "top", ["empty", "wolf"], "wolf");
 let topBank2 = new Tile("top-bank-2", "top", ["empty", "goat"], "goat");
 let topBank3 = new Tile("top-bank-3", "top", ["empty", "cabbages"], "cabbages");
@@ -194,6 +210,8 @@ const tiles = [
   bottomBank2,
   bottomBank3,
 ];
+
+/* main game logic below */
 
 tiles.forEach((tile) => {
   let element = document.getElementById(tile.name);
