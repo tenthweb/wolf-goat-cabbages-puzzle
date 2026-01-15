@@ -8,7 +8,7 @@ class Tile {
 }
 
 function displayRules() {
-  element = document.getElementById("instructions");
+  const element = document.getElementById("instructions");
 
   element.style.visibility = "visible";
   element.addEventListener("click", function () {
@@ -17,37 +17,37 @@ function displayRules() {
 }
 
 function hideRules() {
-  element = document.getElementById("instructions");
+  const element = document.getElementById("instructions");
 
   element.style.visibility = "hidden";
 }
 
 function showMessage() {
-  element = document.getElementById("messages");
+  const element = document.getElementById("messages");
   element.style.visibility = "visible";
 }
 function hideMessage() {
-  element = document.getElementById("messages");
+  const element = document.getElementById("messages");
   element.style.visibility = "hidden";
 }
 
 function hideStartScreen() {
-  element = document.getElementById("start-screen");
+  const element = document.getElementById("start-screen");
   element.style.visibility = "hidden";
 }
 
 function showStartScreen() {
-  element = document.getElementById("start-screen");
+  const element = document.getElementById("start-screen");
   element.style.visibility = "visible";
 }
 
 function showWinScreen() {
-  element = document.getElementById("win-screen");
+  const element = document.getElementById("win-screen");
   element.style.visibility = "visible";
 }
 
 function hideWinScreen() {
-  element = document.getElementById("win-screen");
+  const element = document.getElementById("win-screen");
   element.style.visibility = "hidden";
 }
 
@@ -82,7 +82,7 @@ function resetTiles() {
       tile.occupiedBy = "empty";
     }
 
-    element = document.getElementById(tile.name);
+    const element = document.getElementById(tile.name);
     if (element) {
       if (tile.occupiedBy == "empty") {
         element.style.visibility = "hidden";
@@ -102,7 +102,7 @@ function resetApp() {
 }
 
 function flashRed(tile) {
-  turnRedElement = document.getElementById(tile.name);
+  const turnRedElement = document.getElementById(tile.name);
 
   turnRedElement.style.borderColor = "#ff0000";
   setTimeout(() => {
@@ -111,12 +111,12 @@ function flashRed(tile) {
 }
 
 function growShrink(tile) {
-  growShrinkElement = document.getElementById(tile.name);
+  const growShrinkElement = document.getElementById(tile.name);
   growShrinkElement.classList.add("grow-shrink");
 }
 
 function switchGrowShrinkOff(tile) {
-  growShrinkElement = document.getElementById(tile.name);
+  const growShrinkElement = document.getElementById(tile.name);
 
   growShrinkElement.classList.remove("grow-shrink");
 }
@@ -125,12 +125,12 @@ function warnPlayer(tile) {
   flashRed(tile);
 
   if (tile.bankSide == "top") {
-    shakingelement = document.getElementById(topBoatCargo.name);
+    let shakingelement = document.getElementById(topBoatCargo.name);
     shakingelement.classList.add("shaking");
     shakingelement = document.getElementById(topBoat.name);
     shakingelement.classList.add("shaking");
   } else {
-    shakingelement = document.getElementById(bottomBoatCargo.name);
+    let shakingelement = document.getElementById(bottomBoatCargo.name);
     shakingelement.classList.add("shaking");
     shakingelement = document.getElementById(bottomBoat.name);
     shakingelement.classList.add("shaking");
@@ -140,7 +140,7 @@ function warnPlayer(tile) {
   document.getElementById("messages").innerText =
     "If you move the boat right now, something will get eaten! (Click to continue)";
 
-  element = document.getElementById("messages");
+  const element = document.getElementById("messages");
   element.addEventListener("click", function () {
     hideMessage();
     unfreezeTiles();
@@ -196,7 +196,7 @@ const tiles = [
 ];
 
 tiles.forEach((tile) => {
-  element = document.getElementById(tile.name);
+  let element = document.getElementById(tile.name);
   if (element) {
     if (tile.occupiedBy != "empty") {
     element.innerHTML = `<img src="assets/images/${tile.occupiedBy}.png" alt="${tile.occupiedBy}" style="width: 100%; height: 100%;">`;
