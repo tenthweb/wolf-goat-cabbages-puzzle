@@ -7,20 +7,6 @@ class Tile {
   }
 }
 
-function displayRules() {
-  const element = document.getElementById("instructions");
-
-  element.style.visibility = "visible";
-  element.addEventListener("click", function () {
-    hideRules();
-  });
-}
-
-function hideRules() {
-  const element = document.getElementById("instructions");
-
-  element.style.visibility = "hidden";
-}
 
 function showMessage() {
   const element = document.getElementById("messages");
@@ -31,29 +17,9 @@ function hideMessage() {
   element.style.visibility = "hidden";
 }
 
-function hideStartScreen() {
-  const element = document.getElementById("start-screen");
-  element.style.visibility = "hidden";
-}
-
-function showStartScreen() {
-  const element = document.getElementById("start-screen");
-  element.style.visibility = "visible";
-}
-
 function showWinScreen() {
   const element = document.getElementById("win-screen");
   element.style.visibility = "visible";
-}
-
-function hideWinScreen() {
-  const element = document.getElementById("win-screen");
-  element.style.visibility = "hidden";
-}
-
-function resetGame() {
-  resetTiles();
-  hideWinScreen();
 }
 
 function freezeTiles() {
@@ -68,38 +34,6 @@ function unfreezeTiles() {
   });
 }
 
-function resetTiles() {
-  tiles.forEach((tile) => {
-    if (tile.name == "top-bank-1") {
-      tile.occupiedBy = "wolf";
-    } else if (tile.name == "top-bank-2") {
-      tile.occupiedBy = "goat";
-    } else if (tile.name == "top-bank-3") {
-      tile.occupiedBy = "cabbages";
-    } else if (tile.name == "top-boat") {
-      tile.occupiedBy = "boat";
-    } else {
-      tile.occupiedBy = "empty";
-    }
-
-    const element = document.getElementById(tile.name);
-    if (element) {
-      if (tile.occupiedBy == "empty") {
-        element.style.visibility = "hidden";
-      }
-      else {
-        element.innerHTML = `<img src="assets/images/${tile.occupiedBy}.png" alt="${tile.occupiedBy}" style="width: 100%; height: 100%;">`;
-        element.style.visibility = "visible";
-      }
-    }
-  });
-}
-
-function resetApp() {
-  resetGame();
-  hideWinScreen();
-  showStartScreen();
-}
 
 function flashRed(tile) {
   const turnRedElement = document.getElementById(tile.name);
