@@ -2,13 +2,27 @@
 
 ## Update 16-01-2026
 
-This version of the project features the following changes:
+This update doesn't affect the user experience of the game, but it fixes some bad-practice JavaScript and poor html page organisation, as well as adding better code commenting.
+
+![The game on different screens](images/responsiveness-check.png)
+
+### Code Changes:
 
 * The game was moved to index.html rather than having index.html redirect to game.html, for best practice, accessibility, and SEO purposes.
 * Inappropriate use of global variables was fixed, with "const" and "let" used to decalre variables as appropriate. JS code now runs through the W3schools and JSHint validators cleanly.
 * Inline calls to javascript functions in the html code were removed, and the logic for them was handled directly in the JS file as per best practices.
-* Use of semantic html was improved, although because the game uses the whole screen, this can create problems, e.g. decisions about when it's appropriate to use headers and section headings. More work could be done here to harmonise these.
+* Use of semantic markup was improved, although because the game uses the whole screen, this can create problems, e.g. decisions about when it's appropriate to use headers and section headings.The below state of affairs is a compromise positiont that will allow for later, better-practice improvements
 * Comments were added to the html and javascript files to add clarity.
+
+### Retesting
+
+* The game was retested before release.
+
+### Credits and Sources
+
+The changes in this version are based on feedback from the Code Institute assessor, including [this rewrite](https://www.coderstool.com/cs/7HZLNs) of my html code with semantic markup.
+
+All code is written by Matthew Byrne except for the CSS code to visually hide the header, which I got from [tutorialpedia: "Mastering `display: none` in HTML and CSS"](https://www.tutorialpedia.org/blog/display-none-closed-html-css/#common-practices). I also took advice for best accessibility practice from this page.
 
 ## Introduction
 

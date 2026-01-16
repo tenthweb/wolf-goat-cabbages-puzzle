@@ -1,3 +1,7 @@
+/* Tiles are the basic unit of the game. They'll have a location and can be 
+  occupied by e.g. a wolf, a goat, or nothing at all.
+*/
+
 class Tile {
   constructor(name, bankSide, permittedOccupants = [], occupiedBy = "empty") {
     this.name = name;
@@ -6,6 +10,8 @@ class Tile {
     this.permittedOccupants = permittedOccupants;
   }
 }
+
+// function declarations
 
 function displayRules() {
   const element = document.getElementById("instructions");
@@ -222,8 +228,6 @@ tiles.forEach((tile) => {
     else {
       element.style.visibility = "hidden";
     }
-
-
 
     element.addEventListener("click", function () {
       tiles.forEach((tile) => {
