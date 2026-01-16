@@ -1,138 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A River-Crossing Puzzle</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons//favicon-16x16.png">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <body>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A River-Crossing Puzzle</title>
+    <!--Header is hidden to allow the game to go fullscreen but still exists for accessibility-->
+    
+    <header>
+      <h1>The Wolf, Goat, and Cabbage Problem</h1>
+    </header>
+    
+    <main class="container">
+      
+      <!--Start screen-->
+      
+      <section id="start-screen" class="display-screen">
+        <h2>The Wolf, Goat, and Cabbbage Problem</h1>
+        <p> The wolf, goat and cabbage problem is a very old logic puzzle. The earliest known version was included in a book of puzzles by the medieval monk Alcuin of York. </p>
+        <p>Care to test your wits against it?</p>
+        <div class="menu-controls">
+          <button id="start-game-button">Start Game</button>
+          <button id="instructions-button">Instructions</button>
+        </div>
+      </section>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons//favicon-16x16.png">
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
-  </style>
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-
-<body>
-
-  <!--Header is hidden to allow the game to go fullscreen but still exists for accessibility-->
-
-  <header>
-    <h1>The Wolf, Goat, and Cabbage Problem</h1>
-  </header>
-
-  <main class="container">
-
-    <!--Start screen-->
-
-    <section id="start-screen" class="display-screen">
-      <h1>The Wolf, Goat, and Cabbbage Problem</h1>
-      <p>
-        The wolf, goat and cabbage problem is a very old logic puzzle. The earliest known version was included in a
-        book
-        of puzzles by the medieval monk Alcuin of York.
-      </p>
-      <p>Care to test your wits against it?</p>
-
-      <div class="menu-controls">
-        <button id="start-game-button">Start Game</button>
-        <button id="instructions-button">Instructions</button>
-      </div>
-
-    </section>
-
-    <!-- Instructions screen-->
-
-    <section id="instructions" class="display-screen">
-
-      <h2>Instructions</h2>
-      <p>
-        The goal of the puzzle is to move the wolf, the goat, and the cabbage across the river - the boat can only carry
-        one of them at a time. The wolf will eat the goat if they are left together, and the same is true if the goat
-        and the cabbages are left together.
-      </p>
-      <p>
-        Click the animals and vegetables on the riverbank to move them to the boat, and click the boat to move it across
-        the river. Then move the cargo to the bottom bank.
-      </p>
-      <p>
-        (Click anywhere to return)
-      </p>
-    </section>
-
-    <!-- Main game screen-->
-
-    <section class="main-screen">
-
-      <!--The top riverbank has three tiles: one for each of wolf goat, and cabbages-->
-
-      <div id="top-bank" class="field bank">
-
-        <div id="top-bank-1" class="tile"></div>
-
-        <div id="top-bank-2" class="tile"></div>
-
-        <div id="top-bank-3" class="tile"></div>
-
-      </div>
-
-      <!-- The river has four tiles:
+      <!-- Instructions screen-->
+      
+      <section id="instructions" class="display-screen">
+        <h2>Instructions</h2>
+        <p> The goal of the puzzle is to move the wolf, the goat, and the cabbage across the river - the boat can only carry one of them at a time. The wolf will eat the goat if they are left together, and the same is true if the goat and the cabbages are left together. </p>
+        <p> Click the animals and vegetables on the riverbank to move them to the boat, and click the boat to move it across the river. Then move the cargo to the bottom bank. </p>
+        <p> (Click anywhere to return) </p>
+      </section>
+      
+      <!-- Main game screen-->
+      
+      <section class="main-screen">
+        
+        <!--The top riverbank has three tiles: one for each of wolf goat, and cabbages-->
+        
+        <div id="top-bank" class="field bank">
+          <div id="top-bank-1" class="tile"></div>
+          <div id="top-bank-2" class="tile"></div>
+          <div id="top-bank-3" class="tile"></div>
+        </div>
+        
+        <!-- The river has four tiles:
        1) One for when the boat is docked at the top bank
        2) One for that boat's cargo
        3) One for when the boat is docked at the bottom bank
        2) One for that boat's cargo
        -->
-
-      <div id="river" class="field">
-
-        <div id="top-boat-cargo" class="tile cargo"></div>
-
-        <div id="top-boat" class="tile boat"></div>
-
-        <div id="bottom-boat-cargo" class="tile cargo"></div>
-
-
-        <div id="bottom-boat" class="tile boat"></div>
-
-
-      </div>
-
-      <!--The bottom riverbank has three tiles: one for each of wolf goat, and cabbages-->
-
-      <div id="bottom-bank" class="field bank">
-
-        <div id="bottom-bank-1" class="tile"></div>
-
-        <div id="bottom-bank-2" class="tile"></div>
-
-        <div id="bottom-bank-3" class="tile"></div>
-
-      </div>
-
-    </section>
-
-    <section id="messages"></section>
-
-    <section id="win-screen" class="display-screen">
-
-      <h2>Congratulations!</h2>
-      <p>You win!</p>
-
-      <div class="menu-controls">
-        <button id="play-again-button">Play Again</button>
-        <button id="return-main-button">Return to Main Screen</button>
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="assets/js/script.js"></script>
-
-</body>
-
-
+        
+       <div id="river" class="field">
+          <div id="top-boat-cargo" class="tile cargo"></div>
+          <div id="top-boat" class="tile boat"></div>
+          <div id="bottom-boat-cargo" class="tile cargo"></div>
+          <div id="bottom-boat" class="tile boat"></div>
+        </div>
+       
+        <!--The bottom riverbank has three tiles: one for each of wolf goat, and cabbages-->
+       
+        <div id="bottom-bank" class="field bank">
+          <div id="bottom-bank-1" class="tile"></div>
+          <div id="bottom-bank-2" class="tile"></div>
+          <div id="bottom-bank-3" class="tile"></div>
+        </div>
+      </section>
+      
+      <!--Javascript will populate the "messages" section when e.g. an illegal move is made-->
+      
+      <section id="messages"></section>
+      
+      <!--Win screen-->
+      
+      <section id="win-screen" class="display-screen">
+        <h2>Congratulations!</h2>
+        <p>You win!</p>
+        <div class="menu-controls">
+          <button id="play-again-button">Play Again</button>
+          <button id="return-main-button">Return to Main Screen</button>
+        </div>
+      </section>
+    </main>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>

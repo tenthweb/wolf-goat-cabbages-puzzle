@@ -1,5 +1,17 @@
 # The Wolf, Goat, Cabbage Problem
 
+## Update 16-01-2026
+
+This version of the project features the following changes:
+
+* The game was moved to index.html rather than having index.html redirect to game.html, for best practice, accessibility, and SEO purposes.
+* Inappropriate use of global variables was fixed, with "const" and "let" used to decalre variables as appropriate. JS code now runs through the W3schools and JSHint validators cleanly.
+* Inline calls to javascript functions in the html code were removed, and the logic for them was handled directly in the JS file as per best practices.
+* Use of semantic html was improved, although because the game uses the whole screen, this can create problems, e.g. decisions about when it's appropriate to use headers and section headings. More work could be done here to harmonise these.
+* Comments were added to the html and javascript files to add clarity.
+
+## Introduction
+
 The Wolf, Goat, Cabbage Problem is an old riddle that has elements of logic to it. The purpose of this application is to make a playable version of the riddle available. It is intended for people interested in seeing how the problem works as part of an interest in history or logic, and also for those who just want to play it for its own sake as a diversion. It's primarily designed for mobile browser but is also playable on desktop.
 
 ## Features
