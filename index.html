@@ -18,11 +18,16 @@
 
 <body>
 
+  <!--Header is hidden to allow the game to go fullscreen but still exists for accessibility-->
+
   <header>
     <h1>The Wolf, Goat, and Cabbage Problem</h1>
   </header>
 
   <main class="container">
+
+    <!--Start screen-->
+
     <section id="start-screen" class="display-screen">
       <h1>The Wolf, Goat, and Cabbbage Problem</h1>
       <p>
@@ -39,7 +44,7 @@
 
     </section>
 
-    </section>
+    <!-- Instructions screen-->
 
     <section id="instructions" class="display-screen">
 
@@ -58,7 +63,11 @@
       </p>
     </section>
 
+    <!-- Main game screen-->
+
     <section class="main-screen">
+
+      <!--The top riverbank has three tiles: one for each of wolf goat, and cabbages-->
 
       <div id="top-bank" class="field bank">
 
@@ -69,6 +78,13 @@
         <div id="top-bank-3" class="tile"></div>
 
       </div>
+
+      <!-- The river has four tiles:
+       1) One for when the boat is docked at the top bank
+       2) One for that boat's cargo
+       3) One for when the boat is docked at the bottom bank
+       2) One for that boat's cargo
+       -->
 
       <div id="river" class="field">
 
@@ -83,6 +99,8 @@
 
 
       </div>
+
+      <!--The bottom riverbank has three tiles: one for each of wolf goat, and cabbages-->
 
       <div id="bottom-bank" class="field bank">
 
@@ -115,9 +133,6 @@
   <script src="assets/js/script.js"></script>
 
 </body>
-
-
-
 
 
 </html>
